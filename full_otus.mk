@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2014 Prashant Gahlot (proxthehacker@gmail.com)
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,11 +20,11 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from condor device
-$(call inherit-product, device/motorola/condor/device.mk)
+# Inherit from otus device
+$(call inherit-product, device/motorola/otus/device.mk)
 
-PRODUCT_NAME := full_condor
-PRODUCT_DEVICE := condor
+PRODUCT_NAME := full_otus
+PRODUCT_DEVICE := otus
 PRODUCT_BRAND := motorola
-PRODUCT_MODEL := condor
+PRODUCT_MODEL := otus
 PRODUCT_MANUFACTURER := motorola

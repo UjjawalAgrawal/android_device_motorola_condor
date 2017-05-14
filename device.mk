@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2014-2016 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,15 +14,15 @@
 # limitations under the License.
 #
 
-# This file includes all definitions that apply to ALL condor devices, and
-# are also specific to condor devices
+# This file includes all definitions that apply to ALL otus devices, and
+# are also specific to otus devices
 #
 # Everything in this directory will become public
 
-LOCAL_PATH := device/motorola/condor
+LOCAL_PATH := device/motorola/otus
 
 # device specific vendor blobs
-$(call inherit-product-if-exists, vendor/motorola/condor/condor-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/otus/otus-vendor.mk)
 
 # Ramdisk
  PRODUCT_COPY_FILES += \
@@ -35,9 +35,13 @@ PRODUCT_COPY_FILES += \
 DEVICE_PACKAGE_OVERLAYS := \
     $(LOCAL_PATH)/overlay
 
+# Support FRP features (enable bootloader unlock etc.)
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.frp.pst=/dev/block/platform/msm_sdcc.1/by-name/frp
+
 # Inherit from msm8610-common
 $(call inherit-product, device/motorola/msm8610-common/msm8610.mk)
 
-# Doze
+# CMActions
 PRODUCT_PACKAGES += \
-    MotoDoze
+    CMActions
